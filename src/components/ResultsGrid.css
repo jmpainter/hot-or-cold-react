@@ -9,6 +9,7 @@
   margin: auto;
   border-radius: 5px;
   background-color: white;
+  color: white;
 }
 
 .result {
@@ -17,4 +18,21 @@
   width: 30px;
   margin: 5px;
   padding: 2px;
+}
+
+.hot {
+  background-color: #DB2E36;
+}
+.kind-of-hot {
+  background-color: #A54774;
+}
+.kind-of-cold {
+  background-color: #4B83EC;
+}
+.cold {
+  background-color: #79AFE8;
+}
+.you-guessed-right {
+  background-color: #fbff26;
+  color: black;
 }

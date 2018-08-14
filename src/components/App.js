@@ -23,8 +23,7 @@ class App extends React.Component {
         'You guessed right!'
       ],
       currentMessage: 1,
-      currentGuess: 0,
-      numGuesses: 0
+      currentGuess: 0
     }
   }
 
@@ -51,20 +50,21 @@ class App extends React.Component {
       });
       console.log(this.state);
     } else if(currentGuess === this.state.number) {
-      this.setState({
-        currentMessage: 7
-      })
+      this.setStateFromGuess(currentGuess, 7);
     } else if(Math.abs(currentGuess - this.state.number) <= 10) {
+      // Hot
       this.setStateFromGuess(currentGuess, 6);
     } else if(Math.abs(currentGuess - this.state.number) <= 20) {
+      // Kind of hot
       this.setStateFromGuess(currentGuess, 5); 
     } else if(Math.abs(currentGuess - this.state.number) <= 30) {
+      // Kind of cold
       this.setStateFromGuess(currentGuess, 4);       
-    } else if(Math.abs(currentGuess - this.state.number) <= 20) {  
+    } else { 
+      // Cold
       this.setStateFromGuess(currentGuess, 3);       
     }
-    
-    console.log(this.state.guessHistory);
+    this.textInput.value = '';
   }
 
   render() {
@@ -82,8 +82,8 @@ class App extends React.Component {
             <button type="submit">Guess</button>
           </div>
         </form>
-        <GuessNumber />
-        <ResultsGrid />
+        <GuessNumber number={this.state.guessHistory.length}/>
+        <ResultsGrid guessHistory={this.state.guessHistory}/>
       </div>
     );
   }
