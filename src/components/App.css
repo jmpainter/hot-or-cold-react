@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background: -webkit-linear-gradient(top, #e82e2e 0%,#2f76ef 28%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
 }
 
 .App-title {
@@ -8,38 +7,12 @@
   font-family: 'Baloo Bhaina';
   margin: 10px 0 0;
   color: #fafafa;
+  clear: right;
 }
 
-.guess-form button {
-  margin: 15px 0;
-  /* background-color: #463edf; */
-  background-color: rgb(204, 41, 82);
-  padding: 0 16px;
-  white-space: nowrap;
-  font-weight: 700;
-  line-height: 28px;
-  min-height: 28px;
-  border: 2px solid #4b4b4b;
-  -webkit-border-radius: 16px;
-  border-radius: 16px;
+.new-game-link {
+  text-decoration: none;
   color: white;
-  display: inline-block;
-  font-size: 15px;
-  height: auto;
-  outline: none;
-  -webkit-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
-  width: auto;
-  cursor: pointer;
-}
-
-.guess-form input {
-  width: 250px;
-  height: 30px;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-size: 20px;
-  color: rgb(88, 88, 88);
-  padding: 3px;
+  float: right;
+  margin: 10px 30px;
 }

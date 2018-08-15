@@ -2,6 +2,7 @@ import React from 'react';
 import Message from './Message';
 import GuessNumber from './GuessNumber';
 import ResultsGrid from './ResultsGrid';
+import GuessForm from './GuessForm';
 
 import './App.css';
 
@@ -37,12 +38,11 @@ class App extends React.Component {
     });
   }
 
-  tryGuess(event) {
-    event.preventDefault();
+  tryGuess(value) {
     this.setState({
       currentMessage: 0
     });    
-    const currentGuess = parseInt(this.textInput.value, 10);
+    const currentGuess = parseInt(value, 10);
     console.log(`number: ${this.state.number} currentGuess: ${currentGuess}`);
     if(!Number.isInteger(currentGuess)) {
       this.setState({
@@ -64,24 +64,26 @@ class App extends React.Component {
       // Cold
       this.setStateFromGuess(currentGuess, 3);       
     }
-    this.textInput.value = '';
+  }
+
+  newGame() {
+    this.setState({
+      number: Math.ceil(Math.random() * 100),
+      guessHistory: [],
+      currentMessage: 1,
+      currentGuess: 0
+    })  
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          <a className="new-game-link" href="" onClick={() => this.newGame()}>New Game</a>
           <h1 className="App-title">Hot or Cold</h1>
         </header>
         <Message currentMessage={this.state.messages[this.state.currentMessage]} />
-        <form className="guess-form" onSubmit={event => this.tryGuess(event)}>
-          <div>
-            <input placeholder="Enter a number" type="text" ref={input => this.textInput = input}/>
-          </div>
-          <div>
-            <button type="submit">Guess</button>
-          </div>
-        </form>
+        <GuessForm onSubmit={value => this.tryGuess(value)} />
         <GuessNumber number={this.state.guessHistory.length}/>
         <ResultsGrid guessHistory={this.state.guessHistory}/>
       </div>

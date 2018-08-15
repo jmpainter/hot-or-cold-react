@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Varela');
 
+html {
+  height: 100%;
+  margin: 0;
+}
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: Varela, sans-serif;
   color: #fafafa;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background: -webkit-linear-gradient(top, #e82e2e 0%,#2f76ef 28%,#7db9e8 100%);
 }
