@@ -9,21 +9,19 @@ export default function GuessForm(props) {
     event.preventDefault();
     const value = textInput.value.trim();
     if(value && props.onSubmit) {
-      props.onSubmit(value);
+      props.onSubmit(parseInt(value, 10));
     }
     textInput.value = '';
   }
   
   return (
-    <div className="Guess">
-      <form className="guess-form" onSubmit={event => onSubmit(event)}>
-        <div>
-          <input placeholder="Enter a number" type="text" ref={input => textInput = input} />
-        </div>
-        <div>
-          <button type="submit">Guess</button>
-        </div>
-      </form>
-    </div>
+    <form className="guess-form" onSubmit={event => onSubmit(event)}>
+      <div>
+        <input placeholder="Enter a number" type="text" ref={input => textInput = input} />
+      </div>
+      <div>
+        <button type="submit">Guess</button>
+      </div>
+    </form>
   );
 }

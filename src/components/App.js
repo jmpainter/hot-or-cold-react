@@ -23,8 +23,7 @@ class App extends React.Component {
         'Hot', 
         'You guessed right!'
       ],
-      currentMessage: 1,
-      currentGuess: 0
+      currentMessage: 1
     }
   }
 
@@ -43,12 +42,10 @@ class App extends React.Component {
       currentMessage: 0
     });    
     const currentGuess = parseInt(value, 10);
-    console.log(`number: ${this.state.number} currentGuess: ${currentGuess}`);
     if(!Number.isInteger(currentGuess)) {
       this.setState({
         currentMessage: 2
       });
-      console.log(this.state);
     } else if(currentGuess === this.state.number) {
       this.setStateFromGuess(currentGuess, 7);
     } else if(Math.abs(currentGuess - this.state.number) <= 10) {
