@@ -5,3 +5,10 @@ cache:
   - node_modules
 env:
 - CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: myC1V2dXy3A5qxaOUuLqTaLsBzrS69Rtb6qGDrtoZTH+1E88W2L+MrOeq3kGoVfJQJLNU78nECqDxzNm+0aUqmIYWwy2whmadxbkT0esm758do3zZR8yYpEqJY2wnS1jXU01w/7q81kBAwdMjbCysjoRuCDseeb98XH0BRzusdMrAIFYMbN1LANUDGNGoeKv2wmIvxrAzU0dsgD45Hc9didHMjt3xjeEix1e5Mltbw8ED0ovk+Ynm2UJfcQqIqVgDh3zoJj4os2UqVshAoWsxRr7EnTAi7msE7Ngj/2eKc8N4GedYJLCpCLe63Mud65GBpw8jSITboe1zz0D1vac6uxqnxJYpxWHxatfrVbdMOa2kYsKrOSn69nGbe//LquFgHXx63lbYMNJS+z+rIahyvRqZQdzPDM4GdJlgVnEfeHOemwGQaYz+Y+6eZ5CSu7HMPABtoPOLJ5J5GngJ860S86eDjkWq3ZOKn9YlYQgucJnj2PcwanB3ihWEsOa6ceDnDWcyNKibTbGM89WnqKxILBQyvFxJl4iXjHgfC/7IkhKuoL65+zQpMfiCoSZuD4CGcqxATy0F+37cdaf6V96eNXMipv/7YqTrUb+XDrWATVtWjn11bwiAi/KE2w5nqcuC18UZKwS/9fKx/H6Ue7uxeIuv4Tiaq/OWRQMZre9Z4A=
+  app: polar-forest-73636
+  on:
+    repo: jmpainter/hot-or-cold-react
